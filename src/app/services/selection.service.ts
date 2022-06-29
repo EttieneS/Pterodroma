@@ -10,10 +10,10 @@ const baseURL = "http://localhost:5038/api/selection/";
 })
 export class SelectionService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   create(data: any) {
     console.log("table data " + data);
-    //return this.http.post(baseURL + 'add', data).subscribe(response => console.log(response));
+    return this.http.post(baseURL + 'add', data).subscribe(response => console.log(response));
   }
 }
