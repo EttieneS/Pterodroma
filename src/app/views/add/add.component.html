@@ -8,7 +8,7 @@
   <p>
   <p>
     <div>
-      <button mat-raised-button type="submit">Add Todo</button>
+      <button mat-raised-button id="submitBtn" name="submitBtn"type="submit">Select Currency</button>
     </div>
   <p>
 </form>
@@ -21,4 +21,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+    <div>
+      <button mat-raised-button id="saveBtn" name="saveBtn" (click)="Save()">Save Selection</button>
+    </div>
 </div>

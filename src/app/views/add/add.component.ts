@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, ReactiveFormsModule, NgForm, Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { Currency } from '../../models/currency';
+import { SelectionService } from '../../services/selection.service';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
@@ -21,7 +22,7 @@ export class AddComponent implements OnInit {
   tableDataSource:  MatTableDataSource<Currency>;
   displayedColumns = ["currencyname"];
 
-  constructor() {
+  constructor(private selectionService: SelectionService,) {
     this.currencyform = new FormGroup({
         currencyname: new FormControl('')
     })
@@ -34,7 +35,11 @@ export class AddComponent implements OnInit {
     this.currency = this.currencyform.value;
 
     this.currencyarray.push(this.currency);
-    console.log(this.currencyarray);
     this.tableDataSource =  new MatTableDataSource<Currency>(this.currencyarray);
+  }
+
+  Save()
+  {
+    this.selectionService.create(this.currencyarray);
   }
 }
