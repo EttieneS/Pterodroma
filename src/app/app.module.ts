@@ -11,6 +11,8 @@ import { AddComponent } from './views/add/add.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
@@ -27,8 +29,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 
     MatButtonModule,
     MatFormFieldModule,
-    MatToolbarModule,
-    MatInputModule
+    MatInputModule,    
+    MatTableModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

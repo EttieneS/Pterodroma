@@ -5,6 +5,8 @@ import { Currency } from '../../models/currency';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 
 @Component({
   selector: 'app-add',
@@ -15,6 +17,9 @@ export class AddComponent implements OnInit {
   currencyform: FormGroup;
   currencyarray: Currency[] = [];
   currency: any;
+
+  tableDataSource:  MatTableDataSource<Currency>;
+  displayedColumns = ["currencyname"];
 
   constructor() {
     this.currencyform = new FormGroup({
@@ -30,5 +35,6 @@ export class AddComponent implements OnInit {
 
     this.currencyarray.push(this.currency);
     console.log(this.currencyarray);
+    this.tableDataSource =  new MatTableDataSource<Currency>(this.currencyarray);
   }
 }
