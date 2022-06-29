@@ -1,0 +1,14 @@
+<h3>Request your Currencies</h3>
+<form [formGroup]="currencyform" (ngSubmit)="Add()">
+  <p>
+    <div class="form-field">
+      <label mat-label>Currency: </label>
+      <input matInput id="currencyname" formControlName="currencyname" type="text" placeholder="placeholder" />
+    </div>
+  <p>
+  <p>
+    <div>
+      <button mat-raised-button type="submit">Add Todo</button>
+    </div>
+  <p>
+</form>
